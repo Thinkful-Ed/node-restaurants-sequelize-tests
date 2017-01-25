@@ -1,6 +1,14 @@
 language: node_js
 node_js: node
 services:
-  - postgres
+- postgres
 before_script:
-  - psql -c 'create database "test-restaurants-app";' -U postgres
+- psql -c 'create database "test-restaurants-app";' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: Yjrx9nPWQsJafIIjxfJKm2jguyeM/fLd9DcTfYu/offQ4RpfDezR8/Pibz8bYkFt/DtKxJFHP3nWfj8ojuOr2BOa7If6OYYcWMbapMWNG7Q9FgnA4Bv7E6HC8LknIkeZPIpMqylJ1Nw+bV7n00FV+EPRP3OZeBzy0vQJ5XUMWCoLi0thYLIeKwNXkmjq8UepB8xHQeR77k1rbS6LjMzAVEXoCMKfQ75LkN3NvpFfxCBpC3JwtLEZL+8M6SbxgDTQcJolGNPrkXCHnJ8ZLeDuQP4zV3PSCQVfWiu6/71mluKUpepxoY1U1HHrG4yIeN7kK/lf7rUFiuak7r7wSOFZGuq4frC+U384uDViZF2IQnsLJA5xzDotGfS0AR7MevyxfpHxExNxpffhK7t444t/Fa6rKBMCbd/qYGdDrwmop9LrZCLWEyTVTrAR1NtaFdy+AAVdBOJjBsg+Ikk17uIMJW5csXYF5AX1kD1cu4w7bHnSSb873ADoKSRqN+mr35Qub0EFlCYvWUcRN99t4v5w0RamIT5m88WvrUpD+7Cm6XR/h5+kLzQqlWfzP7qzYWu3N1QxoBj5Fhb51ZxvxwYthYtiUfRSLM58ZUt3d0Z299ZgrRbV18jY3jESd3UvbAbyy50ZwxeYUzvL8ZuZnQtUBWFYdDXyeMrXqvV9FrPWpDI=
+  app: fast-headland-86765
+  on:
+    repo: Thinkful-Ed/node-restaurants-sequelize-tests
+    branch: feature/travis-heroku

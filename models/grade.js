@@ -34,7 +34,7 @@ const Grade = sequelize.define('Grade', {
 
     // this options ensures that if sequelize creates any
     // tables on behalf of this model (which in this app only
-    // happens when we call `sequelize.sync` in our tests), camelCased
+    // happens when we call `sequelize.sync` in our tests),  camelCased
     // column names will be converted to snake_case for the database.
     underscored: true,
     classMethods: {
